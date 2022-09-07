@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_ui/flutter_settings_ui.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hallo_doctor_client/app/modules/profile/controllers/profile_controller.dart';
 
 import '../../imports.dart';
 import '../../modules/auth/data/user.dart';
@@ -18,6 +19,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
   @override
   Widget build(BuildContext context) {
+    final ProfileController logout = Get.put(ProfileController());
     return Scaffold(
       appBar: Appbar(
         titleStr: t.Settings,
@@ -59,6 +61,10 @@ class _SettingsPageState extends State<SettingsPage> {
                     onPressed: (_) async {
                       await save();
                       await authProvider.logout();
+                      logout.authService.logout().then(
+                            (value) => Get.offAllNamed('/login'),
+                          );
+                      logout.logout();
                     },
                   ),
                 ],

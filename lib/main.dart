@@ -8,8 +8,11 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hallo_doctor_client/Helper/Demo_Localization.dart';
+import 'package:hallo_doctor_client/app/modules/appointment/bindings/appointment_binding.dart';
+import 'package:hallo_doctor_client/app/modules/appointment/controllers/appointment_controller.dart';
 import 'package:hallo_doctor_client/app/modules/dashboard/bindings/dashboard_binding.dart';
 import 'package:hallo_doctor_client/app/modules/dashboard/controllers/dashboard_controller.dart';
+import 'package:hallo_doctor_client/app/modules/detail_order/controllers/detail_order_controller.dart';
 import 'package:hallo_doctor_client/app/service/notification_service.dart';
 import 'package:hallo_doctor_client/app/utils/environment.dart';
 import 'package:hallo_doctor_client/app/utils/localization.dart';
@@ -34,11 +37,19 @@ import 'package:form_builder_validators/localization/l10n.dart';
 bool isUserLogin = false;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // await Firebase.initializeApp();
   DashboardBinding().dependencies();
+  AppointmentBinding().dependencies();
+
   Get.put(DashboardController());
   Get.put(NotificationProvider());
+  Get.put(AppointmentController());
+
+  // Get.put(DetailOrderController());
   MobileAds.instance.initialize();
-  await Firebase.initializeApp();
+
   // NotificationService notificationService = NotificationService();
 
   // Get.put(NotificationProvider());
@@ -49,8 +60,7 @@ Future<void> main() async {
   LocaleSettings.useDeviceLocale();
 
   // Initalize Fierbase Core for app, necessary for firebase to work
-  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await dotenv.load();
+
   isUserLogin = await FirebaseService().checkUserAlreadyLogin();
   Stripe.publishableKey = Environment.stripePublishableKey;
   // initializeDateFormatting('en', null);

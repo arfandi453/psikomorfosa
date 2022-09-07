@@ -18,238 +18,234 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       backgroundColor: mBackgroundColor,
       body: SafeArea(
-        child: Obx(
-          () => CustomScrollView(
-            slivers: [
-              SliverFillRemaining(
-                child: Column(
-                  children: [
-                    Container(
-                      height: 60,
-                      padding: EdgeInsets.fromLTRB(17, 15, 17, 10),
-                      child: Container(
-                        child: Row(
-                          children: [
-                            controller.userPicture.value.isEmpty
-                                ? Image.asset('assets/images/user.png')
-                                : Obx(() => CircleAvatar(
-                                      backgroundImage:
-                                          CachedNetworkImageProvider(
-                                              controller.profilePic.value),
-                                    )),
-                            Padding(
-                              padding: EdgeInsets.only(left: 14),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'Selamat Datang,'.tr,
-                                    style: mWelcomeTitleStyle,
-                                  ),
-                                  Text(
-                                    controller
-                                        .userService.currentUser!.displayName!,
-                                    style: mUsernameTitleStyle,
-                                  )
-                                ],
-                              ),
-                            ),
-                            // Expanded(
-                            //     child: Container(
-                            //   alignment: Alignment.centerRight,
-                            //   child: IconButton(
-                            //       onPressed: () {},
-                            //       icon: Icon(Icons.notifications_none)),
-                            // ))
-                          ],
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: GetBuilder<HomeController>(
-                        builder: (_) {
-                          return CarouselSlider(
-                            carouselController: caoruselController,
-                            options: CarouselOptions(
-                                height: 200,
-                                autoPlay: true,
-                                aspectRatio: 2.0,
-                                viewportFraction: 0.9,
-                                onPageChanged: (index, reason) {
-                                  controller.carouselChange(index);
-                                }),
-                            items: imgListAssetSlider(
-                                controller.listImageCarousel),
-                          );
-                        },
-                      ),
-                    ),
-                    Obx(
-                      () => Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: controller.listImageCarousel.isNotEmpty
-                            ? controller.listImageCarousel
-                                .asMap()
-                                .entries
-                                .map((entry) {
-                                return GestureDetector(
-                                  onTap: () => caoruselController
-                                      .animateToPage(entry.key),
-                                  child: Container(
-                                    width: 12.0,
-                                    height: 12.0,
-                                    margin: EdgeInsets.symmetric(
-                                        vertical: 8.0, horizontal: 4.0),
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: (Theme.of(context).brightness ==
-                                                    Brightness.dark
-                                                ? Colors.white
-                                                : Colors.black)
-                                            .withOpacity(
-                                                controller.getcaoruselIndex ==
-                                                        entry.key
-                                                    ? 0.9
-                                                    : 0.4)),
-                                  ),
-                                );
-                              }).toList()
-                            : imgListAsset.asMap().entries.map((entry) {
-                                return GestureDetector(
-                                  onTap: () => caoruselController
-                                      .animateToPage(entry.key),
-                                  child: Container(
-                                    width: 12.0,
-                                    height: 12.0,
-                                    margin: EdgeInsets.symmetric(
-                                        vertical: 8.0, horizontal: 4.0),
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: (Theme.of(context).brightness ==
-                                                    Brightness.dark
-                                                ? Colors.white
-                                                : Colors.black)
-                                            .withOpacity(
-                                                controller.getcaoruselIndex ==
-                                                        entry.key
-                                                    ? 0.9
-                                                    : 0.4)),
-                                  ),
-                                );
-                              }).toList(),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20),
+        child: CustomScrollView(
+          slivers: [
+            SliverFillRemaining(
+              child: Column(
+                children: [
+                  Container(
+                    height: 60,
+                    padding: EdgeInsets.fromLTRB(17, 15, 17, 10),
+                    child: Container(
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          IconCard(
-                            iconData: Icons.category,
-                            text: "Topik Konseling".tr,
-                            onTap: () {
-                              controller.toDoctorCategory();
-                            },
+                          // controller.userPicture.value.isEmpty
+                          //     ? Image.asset('assets/images/user.png')
+                          //     : Obx(() => CircleAvatar(
+                          //           backgroundImage:
+                          //               CachedNetworkImageProvider(
+                          //                   controller.profilePic.value),
+                          //         )),
+                          Padding(
+                            padding: EdgeInsets.only(left: 6),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Selamat Datang,'.tr,
+                                  style: mWelcomeTitleStyle,
+                                ),
+                                Text(
+                                  controller
+                                      .userService.currentUser!.displayName!,
+                                  style: mUsernameTitleStyle,
+                                )
+                              ],
+                            ),
                           ),
-                          IconCard(
-                            iconData: Icons.list_alt_rounded,
-                            text: "Appointment".tr,
-                            onTap: () {
-                              controller.toAppointment();
-                            },
-                          ),
-                          IconCard(
-                            iconData: Icons.search,
-                            text: "Search Doctor".tr,
-                            onTap: () {
-                              controller.toSearchDoctor();
-                            },
-                          )
+                          // Expanded(
+                          //     child: Container(
+                          //   alignment: Alignment.centerRight,
+                          //   child: IconButton(
+                          //       onPressed: () {},
+                          //       icon: Icon(Icons.notifications_none)),
+                          // ))
                         ],
                       ),
                     ),
-                    // Container(
-                    //   margin: EdgeInsets.only(bottom: 20),
-                    //   child: Row(
-                    //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    //     children: [
-                    //       Padding(
-                    //         padding: const EdgeInsets.only(left: 20),
-                    //         child: Text(
-                    //           'Top Rated Doctor'.tr,
-                    //           style: TextStyle(fontWeight: FontWeight.bold),
-                    //         ),
-                    //       ),
-                    //       Padding(
-                    //         padding: const EdgeInsets.only(right: 20),
-                    //         child: TextButton(
-                    //           onPressed: () {
-                    //             controller.toTopRatedDoctor();
-                    //           },
-                    //           child: Text('View All'.tr,
-                    //               style: TextStyle(
-                    //                   fontWeight: FontWeight.bold,
-                    //                   color: Colors.blue[300])),
-                    //         ),
-                    //       )
-                    //     ],
-                    //   ),
-                    // ),
-                    Expanded(
-                      child: RefreshIndicator(
-                        displacement: 10,
-                        onRefresh: () => test(),
-                        child: FutureBuilder<List<Doctor>>(
-                          future: DoctorService().searchDoctor('a'),
-                          builder: (context, snapshot) {
-                            switch (snapshot.connectionState) {
-                              case ConnectionState.waiting:
-                                return Center(
-                                    child: CircularProgressIndicator());
-                              default:
-                                if (snapshot.hasError) {
-                                  return Center(
-                                    child: Text(
-                                        'error + ' + snapshot.error.toString()),
-                                  );
-                                } else if (snapshot.data!.isEmpty) {
-                                  return Center(
-                                    child: Text(
-                                      'Para Psikolog Tidak Ada',
-                                    ),
-                                  );
-                                } else {
-                                  return ListView.builder(
-                                      itemCount: snapshot.data!.length,
-                                      itemBuilder: (contex, index) =>
-                                          DoctorCard(
-                                            doctorName: snapshot
-                                                .data![index].doctorName,
-                                            // doctorSpecialty: snapshot
-                                            //     .data![index]
-                                            //     .doctorCategory!
-                                            //     .categoryName,
-                                            imageUrl: snapshot
-                                                .data![index].doctorPicture,
-                                            onTap: () {
-                                              Get.toNamed('/detail-doctor',
-                                                  arguments:
-                                                      snapshot.data![index]);
-                                            },
-                                          ));
-                                }
-                            }
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: GetBuilder<HomeController>(
+                      builder: (_) {
+                        return CarouselSlider(
+                          carouselController: caoruselController,
+                          options: CarouselOptions(
+                              height: 200,
+                              autoPlay: true,
+                              aspectRatio: 2.0,
+                              viewportFraction: 0.9,
+                              onPageChanged: (index, reason) {
+                                controller.carouselChange(index);
+                              }),
+                          items:
+                              imgListAssetSlider(controller.listImageCarousel),
+                        );
+                      },
+                    ),
+                  ),
+                  Obx(
+                    () => Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: controller.listImageCarousel.isNotEmpty
+                          ? controller.listImageCarousel
+                              .asMap()
+                              .entries
+                              .map((entry) {
+                              return GestureDetector(
+                                onTap: () =>
+                                    caoruselController.animateToPage(entry.key),
+                                child: Container(
+                                  width: 12.0,
+                                  height: 12.0,
+                                  margin: EdgeInsets.symmetric(
+                                      vertical: 8.0, horizontal: 4.0),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: (Theme.of(context).brightness ==
+                                                  Brightness.dark
+                                              ? Colors.white
+                                              : Colors.black)
+                                          .withOpacity(
+                                              controller.getcaoruselIndex ==
+                                                      entry.key
+                                                  ? 0.9
+                                                  : 0.4)),
+                                ),
+                              );
+                            }).toList()
+                          : imgListAsset.asMap().entries.map((entry) {
+                              return GestureDetector(
+                                onTap: () =>
+                                    caoruselController.animateToPage(entry.key),
+                                child: Container(
+                                  width: 12.0,
+                                  height: 12.0,
+                                  margin: EdgeInsets.symmetric(
+                                      vertical: 8.0, horizontal: 4.0),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: (Theme.of(context).brightness ==
+                                                  Brightness.dark
+                                              ? Colors.white
+                                              : Colors.black)
+                                          .withOpacity(
+                                              controller.getcaoruselIndex ==
+                                                      entry.key
+                                                  ? 0.9
+                                                  : 0.4)),
+                                ),
+                              );
+                            }).toList(),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        IconCard(
+                          iconData: Icons.category,
+                          text: "Topik Konseling".tr,
+                          onTap: () {
+                            controller.toDoctorCategory();
                           },
                         ),
+                        IconCard(
+                          iconData: Icons.list_alt_rounded,
+                          text: "Appointment".tr,
+                          onTap: () {
+                            controller.toAppointment();
+                          },
+                        ),
+                        IconCard(
+                          iconData: Icons.search,
+                          text: "Search Doctor".tr,
+                          onTap: () {
+                            controller.toSearchDoctor();
+                          },
+                        )
+                      ],
+                    ),
+                  ),
+                  // Container(
+                  //   margin: EdgeInsets.only(bottom: 20),
+                  //   child: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //     children: [
+                  //       Padding(
+                  //         padding: const EdgeInsets.only(left: 20),
+                  //         child: Text(
+                  //           'Top Rated Doctor'.tr,
+                  //           style: TextStyle(fontWeight: FontWeight.bold),
+                  //         ),
+                  //       ),
+                  //       Padding(
+                  //         padding: const EdgeInsets.only(right: 20),
+                  //         child: TextButton(
+                  //           onPressed: () {
+                  //             controller.toTopRatedDoctor();
+                  //           },
+                  //           child: Text('View All'.tr,
+                  //               style: TextStyle(
+                  //                   fontWeight: FontWeight.bold,
+                  //                   color: Colors.blue[300])),
+                  //         ),
+                  //       )
+                  //     ],
+                  //   ),
+                  // ),
+                  Expanded(
+                    child: RefreshIndicator(
+                      displacement: 10,
+                      onRefresh: () => test(),
+                      child: FutureBuilder<List<Doctor>>(
+                        future: DoctorService().searchDoctor('a'),
+                        builder: (context, snapshot) {
+                          switch (snapshot.connectionState) {
+                            case ConnectionState.waiting:
+                              return Center(child: CircularProgressIndicator());
+                            default:
+                              if (snapshot.hasError) {
+                                return Center(
+                                  child: Text(
+                                      'error + ' + snapshot.error.toString()),
+                                );
+                              } else if (snapshot.data!.isEmpty) {
+                                return Center(
+                                  child: Text(
+                                    'Para Psikolog Tidak Ada',
+                                  ),
+                                );
+                              } else {
+                                return ListView.builder(
+                                    itemCount: snapshot.data!.length,
+                                    itemBuilder: (contex, index) => DoctorCard(
+                                          doctorName:
+                                              snapshot.data![index].doctorName,
+                                          // doctorSpecialty: snapshot
+                                          //     .data![index]
+                                          //     .doctorCategory!
+                                          //     .categoryName,
+                                          imageUrl: snapshot
+                                              .data![index].doctorPicture,
+                                          onTap: () {
+                                            Get.toNamed('/detail-doctor',
+                                                arguments:
+                                                    snapshot.data![index]);
+                                          },
+                                        ));
+                              }
+                          }
+                        },
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

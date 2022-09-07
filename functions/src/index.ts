@@ -73,10 +73,12 @@ exports.confirmConsultation = functions.firestore
         }
     });
 
+
 exports.purchaseTimeslot = stripeFunction.purchaseTimeslot;
 exports.refundTimeslot = stripeFunction.refundTimeslot;
 exports.generateToken = agoraFunction.generateToken;
 exports.stripeWebhook = stripeFunction.stripeWebhook;
+exports.ceritaClient = stripeFunction.ceritaClient;
 exports.notificationStartAppointment =
     notificationFunction.notificationStartAppointment;
 exports.deleteDoctor = doctorFunction.deleteDoctor;

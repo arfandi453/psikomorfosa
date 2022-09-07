@@ -34,7 +34,7 @@ service cloud.firestore {
       allow read;
       allow write;
     }
-    match /Users/{userId}{
+    match /users/{userId}{
     allow create: if true;
     allow read, update:if isAuthenticated();
     }
@@ -46,18 +46,18 @@ service cloud.firestore {
     }
     match /DoctorTimeslot/{timeslotId}{
     // allow create timeslot only role doctor
-    allow create: if isAuthenticated() && get(/databases/$(database)/documents/Users/$(request.auth.uid)).data.role == 'doctor';
+    allow create: if isAuthenticated() && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'doctor';
     allow read;
-    allow update,delete: if get(/databases/$(database)/documents/Users/$(request.auth.uid)).data.doctorId == resource.data.doctorId;
+    allow update,delete: if get(/databases/$(database)/documents/users/$(request.auth.uid)).data.doctorId == resource.data.doctorId;
     }
     match /Order/{orderId}{
     allow read, write: if true;
     }
     match /WitdrawMethod/{withdrawId}{
-    allow read,create: if isAuthenticated() && get(/databases/$(database)/documents/Users/$(request.auth.uid)).data.role == 'doctor';
+    allow read,create: if isAuthenticated() && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'doctor';
     }
     match /WithdrawRequest/{withdrawRequestId}{
-    allow read,create: if isAuthenticated() && get(/databases/$(database)/documents/Users/$(request.auth.uid)).data.role == 'doctor' || isAdmin();
+    allow read,create: if isAuthenticated() && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'doctor' || isAdmin();
     allow update: if isAdmin();
     }
     match /Transaction/{transactionId}{

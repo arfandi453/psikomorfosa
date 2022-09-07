@@ -72,10 +72,10 @@ class ProfileView extends GetView<ProfileController> {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () async {
-                          // controller.authService.logout().then(
-                          //       (value) => Get.offAllNamed('/login'),
-                          //     );
-                          // controller.logout();
+                          controller.authService.logout().then(
+                                (value) => Get.offAllNamed('/login'),
+                              );
+                          controller.logout();
                           await controller.save();
                           await authProvider.logout();
                         },
