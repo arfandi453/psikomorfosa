@@ -216,6 +216,7 @@ class HomeView extends GetView<HomeController> {
                                 return Center(
                                   child: Text(
                                     'Para Psikolog Tidak Ada',
+                                    style: TextStyle(fontFamily: "Nunito"),
                                   ),
                                 );
                               } else {

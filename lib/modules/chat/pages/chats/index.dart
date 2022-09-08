@@ -25,10 +25,11 @@ class _ChatsPageState extends State<ChatsPage> with RouteAware {
     final theme = Theme.of(context);
     return Scaffold(
       appBar: Appbar(
+        backgroundColor: Colors.white,
         title: Text(
           t.Chats,
-          style: GoogleFonts.abrilFatface(
-            textStyle: theme.textTheme.headline6!.copyWith(fontSize: 24),
+          style: GoogleFonts.nunito(
+            textStyle: theme.textTheme.headline6!.copyWith(fontSize: 24,fontWeight: FontWeight.bold,color: Color.fromRGBO(163, 144, 201, 1),),
           ),
         ),
         actions: const [

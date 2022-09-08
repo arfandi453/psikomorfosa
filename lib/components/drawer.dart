@@ -22,7 +22,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
     return Drawer(
       child: Container(
         height: context.height,
-        color: theme.primaryColor,
+        color: Color.fromRGBO(163, 144, 201, 1),
         child: SafeArea(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,24 +53,24 @@ class _DrawerMenu extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       width: 75,
-      color: theme.colorScheme.secondary.withAlpha(60),
+      color: Color.fromRGBO(180, 165, 209, 1),
       child: Column(
         children: <Widget>[
           SizedBox(height: 10),
           MenuItem(
-            icon: Icon(Icons.group),
+            icon: Icon(Icons.group,color: Color.fromRGBO(163, 144, 201, 1),),
             title: t.GroupsMsgs,
             drawerState: DrawerState.GROUPS,
             action: () => appPrefs.drawerState(DrawerState.GROUPS),
           ),
           Container(
-            color: theme.secondaryHeaderColor,
+            // color: theme.secondaryHeaderColor,
             height: 2,
             width: 48,
             margin: EdgeInsets.symmetric(vertical: 8),
           ),
           MenuItem(
-            icon: Badge(child: Icon(Icons.notifications)),
+            icon: Badge(child: Icon(Icons.notifications,color: Color.fromRGBO(163, 144, 201, 1),)),
             title: t.Notifications,
             drawerState: DrawerState.Notifications,
             action: () => appPrefs.drawerState(DrawerState.Notifications),
@@ -103,7 +103,7 @@ class _DrawerMenu extends StatelessWidget {
           ),
           SizedBox(height: 10),
           IconButton(
-            icon: Icon(Icons.person_outline),
+            icon: Icon(Icons.person_outline,color: Colors.white,),
             onPressed: () {
               Navigator.pop(context);
               AuthRoutes.toProfile();
@@ -111,7 +111,7 @@ class _DrawerMenu extends StatelessWidget {
           ),
           SizedBox(height: 10),
           IconButton(
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.settings,color: Colors.white,),
             onPressed: () {
               Navigator.pop(context);
               toSettingsPage();

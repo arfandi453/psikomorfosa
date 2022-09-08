@@ -44,9 +44,13 @@ class _PostEditorPageState extends State<PostEditorPage> {
     final theme = Theme.of(context);
     return Scaffold(
       appBar: Appbar(
+        backgroundColor: Colors.white,
         title: Text(
           t.CreatePost,
-          style: theme.textTheme.headline6,
+          style: TextStyle(
+            fontFamily: "Nunito",
+                color: Color.fromRGBO(163, 144, 201, 1)
+          )
         ),
         actions: <Widget>[
           GestureDetector(
@@ -54,8 +58,8 @@ class _PostEditorPageState extends State<PostEditorPage> {
             child: Center(
               child: Text(
                 t.Share,
-                style: GoogleFonts.acme(
-                  textStyle: theme.textTheme.subtitle1!.copyWith(fontSize: 20),
+                style: GoogleFonts.nunito(
+                  textStyle: theme.textTheme.subtitle1!.copyWith(fontSize: 20,fontWeight:FontWeight.bold,color: Color.fromRGBO(163, 144, 201, 1)),
                 ),
               ),
             ),

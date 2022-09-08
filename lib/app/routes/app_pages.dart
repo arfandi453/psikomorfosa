@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:hallo_doctor_client/app/intro.dart';
 
 import 'package:hallo_doctor_client/app/modules/appointment/bindings/appointment_binding.dart';
 import 'package:hallo_doctor_client/app/modules/appointment/views/appointment_view.dart';
@@ -55,7 +56,7 @@ class AppPages {
   AppPages._();
 
   static const DASHBOARD = Routes.DASHBOARD;
-  static const LOGIN = Routes.LOGIN;
+  static const INTRO = Routes.INTRO;
 
   static final routes = [
     GetPage(
@@ -68,6 +69,10 @@ class AppPages {
     //   page: () => MidtransView(),
     //   binding: MidtransPaymentBinding(),
     // ),
+    GetPage(
+      name: _Paths.INTRO,
+      page: () => Landing(),
+    ),
     GetPage(
       name: _Paths.PROFILE,
       page: () => ProfileView(),

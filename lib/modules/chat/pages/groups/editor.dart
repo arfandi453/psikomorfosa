@@ -28,6 +28,7 @@ class _GroupEditorState extends State<GroupEditor> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: Appbar(
+        backgroundColor: Colors.white,
         titleStr: isToEdit ? t.EditGroup : t.CreateGroup,
       ),
       body: SingleChildScrollView(

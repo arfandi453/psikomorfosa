@@ -46,6 +46,7 @@ class _PrivateChatPageState extends State<PrivateChatPage> {
   Widget build(BuildContext context) {
     if (user == null) return Scaffold();
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: UserAppBarTile(
         user!,
         isTyping: isTyping,

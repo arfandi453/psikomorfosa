@@ -17,6 +17,7 @@ class ProfileAppBar extends StatelessWidget {
         final user = rxUser()!;
         return AppBar(
           backgroundColor: Colors.transparent,
+          foregroundColor: Color.fromRGBO(163, 144, 201, 1),
           iconTheme: IconThemeData(),
           elevation: 0,
           actions: [

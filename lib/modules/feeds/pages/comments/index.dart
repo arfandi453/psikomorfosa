@@ -47,9 +47,14 @@ class _CommentsPageState extends State<CommentsPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
+        backgroundColor: Colors.white,
+        foregroundColor: Color.fromRGBO(163, 144, 201, 1),
         title: Text(
           t.Comments,
-          style: theme.textTheme.headline6,
+          // style: theme.textTheme.headline6,
+          style: TextStyle(
+            color: Color.fromRGBO(163, 144, 201, 1),fontFamily: "Nunito",fontWeight: FontWeight.bold
+          ),
         ),
       ),
       body: Column(

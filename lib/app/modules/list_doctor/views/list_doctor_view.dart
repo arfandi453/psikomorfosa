@@ -12,7 +12,9 @@ class ListDoctorView extends GetView<ListDoctorController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Doctor'.tr),
+        backgroundColor: Colors.white,
+        foregroundColor: Color.fromRGBO(163, 144, 201, 1),
+        title: Text('Doctor'.tr,style: TextStyle(fontFamily: "Nunito",fontWeight: FontWeight.bold),),
         centerTitle: true,
       ),
       body: Container(

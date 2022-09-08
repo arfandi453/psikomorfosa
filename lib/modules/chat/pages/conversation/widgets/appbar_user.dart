@@ -23,7 +23,8 @@ class UserAppBarTile extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return AppBar(
-      backgroundColor: theme.primaryColor,
+      backgroundColor: Colors.white,
+      foregroundColor: Color.fromRGBO(163, 144, 201, 1),
       leading: BackButton(
         color: theme.iconTheme.color,
       ),

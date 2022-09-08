@@ -37,7 +37,7 @@ class ReplyWidget extends StatelessWidget {
               TextSpan(
                 text: '${comment.isMine ? 'Me' : comment.authorName}: ',
                 style: theme.textTheme.subtitle1!
-                    .copyWith(fontWeight: FontWeight.bold),
+                    .copyWith(fontWeight: FontWeight.bold,fontFamily: "Nunito"),
               ),
               TextSpan(text: comment.content, style: theme.textTheme.subtitle1),
             ],

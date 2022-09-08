@@ -52,9 +52,13 @@ class _CommentReplyPageState extends State<ReplyPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
+        backgroundColor: Colors.white,
+        foregroundColor: Color.fromRGBO(163, 144, 201, 1),
         title: Text(
           t.Replies,
-          style: theme.textTheme.headline6,
+          style: TextStyle(
+            color: Color.fromRGBO(163, 144, 201, 1)
+          )
         ),
       ),
       body: StreamBuilder<Comment>(

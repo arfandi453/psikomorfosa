@@ -8,6 +8,7 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
   final Color? backgroundColor;
 
+
   const Appbar({
     super.key,
     this.title,
@@ -22,6 +23,7 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: backgroundColor,
+      foregroundColor: Color.fromRGBO(163, 144, 201, 1),
       elevation: 0.0,
       leading: leading,
       centerTitle: centerTitle,

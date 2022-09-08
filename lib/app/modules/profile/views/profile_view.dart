@@ -13,7 +13,7 @@ class ProfileView extends GetView<ProfileController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue[300],
+        backgroundColor: Color.fromRGBO(163, 144, 201, 1),
         elevation: 0,
         title: Text(
           'Profile'.tr,

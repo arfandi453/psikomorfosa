@@ -16,9 +16,13 @@ class ReactionsPage extends StatelessWidget {
     final theme = Theme.of(context);
     return Scaffold(
       appBar: Appbar(
+        backgroundColor: Colors.white,
         title: Text(
           t.Likes,
-          style: theme.textTheme.headline6,
+          style: TextStyle(
+            fontFamily: "Nunito",
+                fontWeight: FontWeight.bold
+          )
         ),
       ),
       body: UsersList(usersId: likeIDs),

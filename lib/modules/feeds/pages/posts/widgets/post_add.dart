@@ -27,9 +27,9 @@ class AddPostWidget extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Row(
                     children: [
-                      Text(t.WhatOnMind),
+                      Text(t.WhatOnMind,style: TextStyle(fontFamily: "Nunito",color: Colors.grey),),
                       Spacer(),
-                      Icon(Icons.send),
+                      Icon(Icons.send,color: Color.fromRGBO(163, 144, 201, 1),),
                     ],
                   ),
                 ),

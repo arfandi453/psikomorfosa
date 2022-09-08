@@ -31,16 +31,17 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
-      appBar: Appbar(
-        titleStr: t.Register,
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.white.withOpacity(0),
-          ),
-          onPressed: () {},
-        ),
-      ),
+      // appBar: Appbar(
+      //   titleStr: t.Register,
+      //   leading: IconButton(
+      //     icon: Icon(
+      //       Icons.arrow_back,
+      //       color: Colors.white.withOpacity(0),
+      //     ),
+      //     onPressed: () {},
+      //   ),
+      // ),
+
       body: SingleChildScrollView(
         child: SizedBox(
           height: context.height,
@@ -48,6 +49,27 @@ class _RegisterPageState extends State<RegisterPage> {
             key: formKey,
             child: Column(
               children: <Widget>[
+                const SizedBox(height: 50),
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: const Icon(
+                      Icons.arrow_back_ios_outlined,
+                      size: 32,
+                      color: Colors.black54,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 100),
+                const Text(
+                  'Daftar Ke Akun Kamu',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 50),
                 Spacer(),
                 Obx(
                   () => AppTextFormField(
@@ -103,7 +125,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 SizedBox(height: 20),
                 Align(
                   alignment: Alignment(-0.8, 0),
-                  child: Text(t.SelectGender),
+                  child: Text(t.SelectGender, style: TextStyle( fontFamily: "Nunito",),),
                 ),
                 GenderWidget(onSelect: (v) => gender = v!),
                 SizedBox(height: 8),
@@ -120,6 +142,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     title: Text(
                       t.AcceptTerms,
                       style: theme.textTheme.headline6!.copyWith(
+                        fontFamily: "Nunito",
                         fontSize: 14,
                         decoration: TextDecoration.underline,
                       ),

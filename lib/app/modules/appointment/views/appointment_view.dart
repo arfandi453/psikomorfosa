@@ -12,7 +12,9 @@ class AppointmentView extends GetView<AppointmentController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Riwayat Konseling'.tr),
+        foregroundColor: Color.fromRGBO(163, 144, 201, 1),
+        title: Text('Riwayat Konseling'.tr,style: TextStyle(color: Color.fromRGBO(163, 144, 201, 1),fontWeight: FontWeight.bold),),
+        backgroundColor: Colors.white,
         centerTitle: true,
       ),
       body: RefreshIndicator(
@@ -43,7 +45,7 @@ class AppointmentView extends GetView<AppointmentController> {
                           DateFormat('EEEE, dd, MMMM')
                               .format(listTimeslot[index].timeSlot!),
                     ),
-                    trailing: Icon(Icons.arrow_forward_ios),
+                    trailing: Icon(Icons.arrow_forward_ios,color: Color.fromRGBO(163, 144, 201, 1),),
                   ),
                 );
               },

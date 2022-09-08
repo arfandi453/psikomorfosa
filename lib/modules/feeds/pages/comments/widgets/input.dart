@@ -59,7 +59,7 @@ class _CommentInputState extends State<CommentInput> {
                     keyboardType: TextInputType.multiline,
                     textInputAction: TextInputAction.send,
                     decoration: InputDecoration(
-                      fillColor: Theme.of(context).primaryColor,
+                      fillColor: Colors.white,
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
@@ -68,7 +68,7 @@ class _CommentInputState extends State<CommentInput> {
                       hintText: t.TypeComment,
                       suffixIcon: GestureDetector(
                         onTap: _onSend,
-                        child: const Icon(Icons.send, color: Colors.white),
+                        child: const Icon(Icons.send, color:Color.fromRGBO(163, 144, 201, 1)),
                       ),
                     ),
                     onEditingComplete: _onSend,

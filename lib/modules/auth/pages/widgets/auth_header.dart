@@ -17,10 +17,10 @@ class AuthTopHeader extends StatelessWidget {
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 100, bottom: 20),
-            child: Image.asset(Assets.images.logo.path),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.only(top: 100, bottom: 20),
+          //   child: Image.asset(Assets.images.logo.path),
+          // ),
           Positioned.fill(
             child: Appbar(
               backgroundColor: Colors.transparent,

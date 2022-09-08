@@ -38,12 +38,32 @@ class _PhoneLoginPageState extends State<PhoneLoginPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              AuthTopHeader(),
-              SizedBox(height: 8),
+              SizedBox(height: 200),
+              // AuthTopHeader(),
+              const Text(
+                'Masukkan Nomor Telepon',
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 90),
               PhoneFormWidget(
                 codeController: codeController,
                 phoneController: phoneController,
                 country: country,
+              ),
+              const SizedBox(height: 48),
+              const Text(
+                "Masukkan nomor telepon anda \n"
+                    "yang aktif tanpa menginput\n"
+                    " angka 0 atau +62 di awal nomor",
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black38,
+                ),
+                textAlign: TextAlign.center,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20),
@@ -63,16 +83,31 @@ class _PhoneLoginPageState extends State<PhoneLoginPage> {
                 height: context.height / 4,
                 child: Center(
                   child: Obx(
-                    () => AppButton(
-                      t.Next,
-                      suffixIcon: Icon(
-                        Icons.chevron_right,
-                        color: context.theme.scaffoldBackgroundColor,
-                      ),
-                      isLoading: isLoading(),
-                      onTap: getValidationCode,
-                    ),
-                  ),
+                      () =>Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                            gradient: LinearGradient(
+                                colors: [
+                                  Color.fromRGBO(150, 149, 238, 1),
+                                  Color.fromRGBO(251, 199, 212, 1),
+                                ]
+                            )
+                        ),
+                        child:AppButton(
+                          t.Next,
+                          suffixIcon: Icon(
+                            Icons.chevron_right,
+                             // color: context.theme.scaffoldBackgroundColor,
+                          ),
+                          isLoading: isLoading(),
+                          onTap: getValidationCode,
+
+                        ),
+
+                      )
+
+
+                  )
                 ),
               ),
             ],

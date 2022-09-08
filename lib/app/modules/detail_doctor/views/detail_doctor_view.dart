@@ -13,7 +13,9 @@ class DetailDoctorView extends GetView<DetailDoctorController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Doctor'.tr),
+        title: Text('Doctor'.tr ,style: TextStyle(fontFamily: "Nunito",fontWeight: FontWeight.bold),),
+        backgroundColor: Colors.white,
+        foregroundColor: Color.fromRGBO(163, 144, 201, 1),
         centerTitle: true,
       ),
       body: Stack(children: [
@@ -56,7 +58,10 @@ class DetailDoctorView extends GetView<DetailDoctorController> {
                     width: double.infinity,
                     child: Text(
                       'Biography'.tr,
-                      style: titleTextStyle,
+                      style: TextStyle(
+                        fontFamily: "Nunito",fontWeight:FontWeight.bold
+
+                      ),
                     ),
                   ),
                   SizedBox(height: 5),
@@ -68,15 +73,17 @@ class DetailDoctorView extends GetView<DetailDoctorController> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Review'.tr,
-                        style: titleTextStyle,
+                        'Review',
+                        style: TextStyle(
+                            fontFamily: "Nunito",fontWeight:FontWeight.bold,
+                        ),
                       ),
                       SizedBox(
                         height: 5,
                       ),
                       TextButton(
                         onPressed: () {},
-                        child: Text('View All'.tr),
+                        child: Text('View All'.tr, style: TextStyle(fontFamily: "Nunito",color:Color.fromRGBO(163, 144, 201, 1),fontWeight: FontWeight.bold),),
                       )
                     ],
                   ),
@@ -145,11 +152,16 @@ class DetailDoctorView extends GetView<DetailDoctorController> {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(50)),
-                            color: secondaryColor,
+                              gradient: LinearGradient(
+                                  colors: [
+                                    Color.fromRGBO(150, 149, 238, 1),
+                                    Color.fromRGBO(251, 199, 212, 1),
+                                  ]
+                              )
                           ),
                           child: Text(
-                            'Book Consultation'.tr,
-                            style: TextStyle(color: Colors.white),
+                            'Boock Consultation'.tr,
+                            style: TextStyle(color: Colors.white, fontFamily: "Nunito"),
                           ),
                         ),
                       ),
@@ -163,7 +175,12 @@ class DetailDoctorView extends GetView<DetailDoctorController> {
                     height: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(50)),
-                      color: secondaryColor,
+                        gradient: LinearGradient(
+                            colors: [
+                              Color.fromRGBO(150, 149, 238, 1),
+                              Color.fromRGBO(251, 199, 212, 1),
+                            ]
+                        )
                     ),
                     child: Icon(
                       Icons.message_rounded,
@@ -189,7 +206,7 @@ Widget buildImage(Color color, {String doctorProfilePic = ''}) {
   return Container(
     child: CircleAvatar(
       radius: 53,
-      backgroundColor: color,
+      backgroundColor: Color.fromRGBO(163, 144, 201, 1),
       child: CircleAvatar(
         backgroundImage: defaultImage as ImageProvider,
         radius: 50,

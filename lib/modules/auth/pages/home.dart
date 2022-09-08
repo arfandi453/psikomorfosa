@@ -31,7 +31,7 @@ class _WelcomePage extends StatelessWidget {
               Text(
                 t.AppName,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.poppins(
+                style: GoogleFonts.nunito(
                   fontSize: 38,
                   fontWeight: FontWeight.bold,
                 ),
@@ -39,7 +39,7 @@ class _WelcomePage extends StatelessWidget {
               Text(
                 t.AboutApp,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.poppins(
+                style: GoogleFonts.nunito(
                   fontSize: 15,
                   color: context.isDarkMode
                       ? Colors.white

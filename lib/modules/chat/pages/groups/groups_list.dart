@@ -29,7 +29,7 @@ class _GroupsListPageState extends State<GroupsListPage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: theme.primaryColor,
+      backgroundColor: Color.fromRGBO(163, 144, 201, 1),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,13 +41,13 @@ class _GroupsListPageState extends State<GroupsListPage> {
                   padding: const EdgeInsets.only(top: 4, bottom: 8, left: 20),
                   child: Text(
                     t.Groups,
-                    style: GoogleFonts.basic(
-                      textStyle: theme.textTheme.headline5,
+                    style: GoogleFonts.nunito(
+                      textStyle: theme.textTheme.headline5,color: Colors.white
                     ),
                   ),
                 ),
                 IconButton(
-                  icon: Icon(Icons.search),
+                  icon: Icon(Icons.search,color: Colors.white,),
                   onPressed: ChatRoutes.toGroupsSearch,
                 ),
               ],
@@ -64,9 +64,9 @@ class _GroupsListPageState extends State<GroupsListPage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            Icon(Icons.search),
+                            Icon(Icons.search,color: Colors.white,),
                             SizedBox(width: 22),
-                            Text(t.Search)
+                            Text(t.Search,style: TextStyle(color: Colors.white),)
                           ],
                         ),
                       ),

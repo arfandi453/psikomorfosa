@@ -11,12 +11,12 @@ class DoctorCategoryView extends GetView<DoctorCategoryController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: mBackgroundColor,
-        foregroundColor: Colors.black,
+        backgroundColor: Colors.white,
+        foregroundColor: Color.fromRGBO(163, 144, 201, 1),
         elevation: 0,
         title: Text(
           'Doctor Specialist'.tr,
-          style: TextStyle(color: mTitleColor),
+          style: TextStyle(color: Color.fromRGBO(163, 144, 201, 1),fontWeight: FontWeight.bold,fontFamily: "Nunito"),
         ),
         centerTitle: true,
       ),

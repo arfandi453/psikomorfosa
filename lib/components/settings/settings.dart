@@ -22,6 +22,7 @@ class _SettingsPageState extends State<SettingsPage> {
     final ProfileController logout = Get.put(ProfileController());
     return Scaffold(
       appBar: Appbar(
+        backgroundColor: Colors.white,
         titleStr: t.Settings,
       ),
       body: SingleChildScrollView(

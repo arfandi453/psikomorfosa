@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 //constant color
-const primaryColor = Color(0xFF0d9cf4);
-const secondaryColor = Color(0xFF00A9FF);
+// const primaryColor = Color(0xFF0d9cf4);
+const secondaryColor = Color(0xFFA390C9);
 const mBackgroundColor = Color(0xFFFAFAFA);
 const mGreyColor = Color(0xFFB4B0B0);
 const mTitleColor = Color(0xFF23374D);
@@ -17,46 +17,46 @@ const mCardSubtitleColor = mTitleColor;
 const defaultPadding = 16.0;
 
 //constant Style
-var titleStyle = GoogleFonts.inter(fontWeight: FontWeight.w600);
+var titleStyle = GoogleFonts.nunito(fontWeight: FontWeight.w600);
 
 var titleLongStyle =
-    GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w900);
+    GoogleFonts.nunito(fontSize: 14, fontWeight: FontWeight.w900);
 
 // Style for Home Profile Header
-var mWelcomeTitleStyle = GoogleFonts.inter(
-    fontWeight: FontWeight.w500, fontSize: 10, color: mSubtitleColor);
-var mUsernameTitleStyle = GoogleFonts.inter(
+var mWelcomeTitleStyle = GoogleFonts.nunito(
+    fontWeight: FontWeight.w500, fontSize: 10, color: secondaryColor);
+var mUsernameTitleStyle = GoogleFonts.nunito(
+    fontWeight: FontWeight.w700, fontSize: 12, color: secondaryColor);
+var doctorNameTextStyle = GoogleFonts.nunito(
     fontWeight: FontWeight.w700, fontSize: 12, color: mTitleColor);
-var doctorNameTextStyle = GoogleFonts.inter(
-    fontWeight: FontWeight.w700, fontSize: 12, color: mTitleColor);
-var specialistTextStyle = GoogleFonts.inter(
+var specialistTextStyle = GoogleFonts.nunito(
     fontWeight: FontWeight.w500, fontSize: 10, color: mSubtitleColor);
-var appbarTextStyle = GoogleFonts.inter(
+var appbarTextStyle = GoogleFonts.nunito(
     fontWeight: FontWeight.w500, fontSize: 15, color: mTitleColor);
 
 // Text Style for Doctor Category
-var doctorCategoryTextStyle = GoogleFonts.inter(
+var doctorCategoryTextStyle = GoogleFonts.nunito(
     fontWeight: FontWeight.w700, fontSize: 15, color: mTitleColor);
 
 // Text Style for Doctor Card
-var doctorNameStyle = GoogleFonts.inter(
+var doctorNameStyle = GoogleFonts.nunito(
     fontWeight: FontWeight.w500, fontSize: 20, color: mTitleColor);
-var priceTextStyle = GoogleFonts.inter(
+var priceTextStyle = GoogleFonts.nunito(
     fontWeight: FontWeight.w400, fontSize: 15, color: mSubtitleColor);
-var priceNumberTextStyle = GoogleFonts.inter(
-    fontWeight: FontWeight.w700, fontSize: 25, color: secondaryColor);
+var priceNumberTextStyle = GoogleFonts.nunito(
+    fontWeight: FontWeight.w700, fontSize: 25, color: Color.fromRGBO(163, 144, 201, 1));
 
 //Text Style Detail Doctor
-var titleTextStyle = GoogleFonts.poppins(
+var titleTextStyle = GoogleFonts.nunito(
     fontWeight: FontWeight.w600, fontSize: 15, color: mTitleColor);
-var subTitleTextStyle = GoogleFonts.poppins(
+var subTitleTextStyle = GoogleFonts.nunito(
     fontWeight: FontWeight.w400, fontSize: 10, color: mSubtitleColor);
-var doctorCategoryStyle = GoogleFonts.poppins(
+var doctorCategoryStyle = GoogleFonts.nunito(
     fontWeight: FontWeight.w400, fontSize: 10, color: mSubtitleColor);
 
 //Text Style for Detail Order
-var tableColumHeader = GoogleFonts.poppins(
+var tableColumHeader = GoogleFonts.nunito(
     fontWeight: FontWeight.w600, fontSize: 15, color: mTitleColor);
 
-var tableCellText = GoogleFonts.poppins(
+var tableCellText = GoogleFonts.nunito(
     fontWeight: FontWeight.w500, fontSize: 12, color: mTitleColor);

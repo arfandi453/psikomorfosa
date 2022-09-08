@@ -12,7 +12,11 @@ class SearchDoctorView extends GetView<SearchDoctorController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Search Doctor'.tr),
+          title: Text('Search Doctor',style: TextStyle(
+          fontFamily: "Nunito",fontWeight: FontWeight.bold
+          ),),
+          backgroundColor: Colors.white,
+          foregroundColor: Color.fromRGBO(163, 144, 201, 1),
           centerTitle: true,
           actions: [
             IconButton(

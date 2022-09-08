@@ -25,37 +25,37 @@ class DashboardView extends GetView<DashboardController> {
     return Scaffold(
       bottomNavigationBar: Obx(() => BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
-            selectedItemColor: Colors.blue[700],
-            unselectedItemColor: Colors.blue[300],
+            selectedItemColor:  Color.fromRGBO(163, 144, 201, 1),
+            unselectedItemColor: Colors.grey,
             items: [
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.group,
-                    color: Colors.blue[500],
+                    color: Color.fromRGBO(163, 144, 201, 1),
                   ),
                   label: "UpCerita".tr),
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.contacts,
-                    color: Colors.blue[500],
+                    color: Color.fromRGBO(163, 144, 201, 1),
                   ),
                   label: "Konseling".tr),
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.video_camera_front,
-                    color: Colors.blue[500],
+                    color: Color.fromRGBO(163, 144, 201, 1),
                   ),
                   label: "Riwayat".tr),
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.message,
-                    color: Colors.blue[500],
+                    color: Color.fromRGBO(163, 144, 201, 1),
                   ),
                   label: "Psikolog".tr),
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.book,
-                    color: Colors.blue[500],
+                    color: Color.fromRGBO(163, 144, 201, 1),
                   ),
                   label: "Edukasi".tr),
             ],

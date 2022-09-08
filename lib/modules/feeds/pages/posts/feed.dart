@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hallo_doctor_client/Helper/Color.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
 import '../../../../components/drawer.dart';
@@ -37,9 +38,12 @@ class _PostsScreenState extends State<FeedPage> with WidgetsBindingObserver {
       key: scaffoldKey,
       drawer: HomeDrawer(),
       appBar: AppBar(
+        foregroundColor: Color.fromRGBO(163, 144, 201, 1),
+        backgroundColor:Colors.white,
         title: Text(
-          t.Feed,
-          style: GoogleFonts.abrilFatface(fontSize: 22),
+          "FeeD",
+          // t.Feed,
+          style: GoogleFonts.nunito(fontSize: 22,fontWeight: FontWeight.bold),
         ),
         leading: context.isTablet
             ? SizedBox()

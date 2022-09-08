@@ -47,18 +47,18 @@ class ProfileHeader extends StatelessWidget implements PreferredSizeWidget {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 elevation: 5.0,
-                color: theme.primaryColor,
+                color: Color.fromRGBO(163, 144, 201, 1),
                 child: Column(
                   children: [
                     SizedBox(height: 80),
                     Text(
                       '@${user.username}',
-                      style: GoogleFonts.basic().copyWith(fontSize: 28),
+                      style: GoogleFonts.nunito().copyWith(fontSize: 28),
                       maxLines: 1,
                     ),
                     Text(
                       user.fullName,
-                      style: GoogleFonts.abel().copyWith(fontSize: 20),
+                      style: GoogleFonts.nunito().copyWith(fontSize: 20),
                     ),
                     SizedBox(height: 20),
                     AppText(

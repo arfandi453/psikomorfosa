@@ -51,7 +51,7 @@ class _ChatInputState extends State<ChatInput> with WidgetsBindingObserver {
                     textCapitalization: TextCapitalization.sentences,
                     textInputAction: TextInputAction.newline,
                     decoration: InputDecoration(
-                      fillColor: theme.primaryColor,
+                      fillColor: Color.fromRGBO(163, 144, 201, 1),
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
@@ -68,7 +68,7 @@ class _ChatInputState extends State<ChatInput> with WidgetsBindingObserver {
                         },
                         child: Icon(
                           Icons.attachment,
-                          color: theme.iconTheme.color,
+                          color: Colors.black,
                         ),
                       ),
                     ),
@@ -95,7 +95,7 @@ class _ChatInputState extends State<ChatInput> with WidgetsBindingObserver {
                     onTap: _onSendText,
                     child: CircleAvatar(
                       radius: 25,
-                      backgroundColor: theme.inversePrimaryColor,
+                      backgroundColor: Color.fromRGBO(163, 144, 201, 1),
                       child: Icon(
                         Icons.send,
                         size: 25,

@@ -18,6 +18,8 @@ class DetailOrderView extends GetView<DetailOrderController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.white,
+          foregroundColor: Color.fromRGBO(163, 144, 201, 1),
           title: Text('Detail Order'.tr),
           centerTitle: true,
         ),
@@ -29,7 +31,7 @@ class DetailOrderView extends GetView<DetailOrderController> {
                   children: [
                     Text(
                       'Hi '.tr + controller.username.value,
-                      style: GoogleFonts.poppins(
+                      style: GoogleFonts.nunito(
                           fontWeight: FontWeight.w600,
                           fontSize: 14,
                           color: mTitleColor),
@@ -37,7 +39,7 @@ class DetailOrderView extends GetView<DetailOrderController> {
                     Text(
                       'before making a payment, make sure the items below are correct'
                           .tr,
-                      style: GoogleFonts.poppins(
+                      style: GoogleFonts.nunito(
                           fontWeight: FontWeight.w400,
                           fontSize: 12,
                           color: mSubtitleColor),
@@ -64,7 +66,7 @@ class DetailOrderView extends GetView<DetailOrderController> {
                               'Total : '.tr +
                                   currencySign +
                                   controller.selectedTimeSlot.price.toString(),
-                              style: GoogleFonts.poppins(
+                              style: GoogleFonts.nunito(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 17,
                                   color: mTitleColor),
@@ -104,7 +106,7 @@ class DetailOrderView extends GetView<DetailOrderController> {
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(50)),
-                          color: secondaryColor,
+                          color: Color.fromRGBO(163, 144, 201, 1),
                         ),
                         child: Text(
                           'Confirm'.tr,

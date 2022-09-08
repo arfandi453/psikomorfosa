@@ -92,7 +92,7 @@ class DoctorCard extends StatelessWidget {
                             imageAsset: 'assets/icons/hospital_icon.png',
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 5,
                           ),
                           RatingBarIndicator(
                               rating: 4.5,
@@ -113,7 +113,12 @@ class DoctorCard extends StatelessWidget {
                         margin: EdgeInsets.only(right: 20),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: Colors.blue),
+                            gradient: LinearGradient(
+                                colors: [
+                                  Color.fromRGBO(150, 149, 238, 1),
+                                  Color.fromRGBO(251, 199, 212, 1),
+                                ]
+                            )),
                         child: Text(
                           'Book Consultation'.tr,
                           style: TextStyle(color: Colors.white),

@@ -7,6 +7,7 @@ class AppText extends StatelessWidget {
   final int? maxLines;
   final TextAlign? textAlign;
   final FontWeight? fontWeight;
+  final FontWeight? fontFamily;
   final TextOverflow? overflow;
   const AppText(
     this.data, {
@@ -16,6 +17,7 @@ class AppText extends StatelessWidget {
     this.maxLines,
     this.textAlign,
     this.fontWeight,
+    this.fontFamily,
     this.overflow,
   });
 

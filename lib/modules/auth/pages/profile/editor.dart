@@ -63,7 +63,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         elevation: 5.0,
-                        color: theme.primaryColorDark,
+                        color: Color.fromRGBO(163, 144, 201, 1),
                         child: Theme(
                           data: ThemeData.dark(),
                           child: Padding(

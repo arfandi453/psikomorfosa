@@ -63,6 +63,7 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 15,
+                      fontFamily: "Nunito",
                     ),
                   ),
                 ],
@@ -86,13 +87,27 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
             ),
           ),
           SizedBox(height: 20),
+          const Text(
+            "Kode OTP berlaku dalam waktu 30 detik \n "
+                "Ada Kendala OTP ? Hubungi Di Sini",
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 50),
           RichText(
             textAlign: TextAlign.center,
             text: TextSpan(
               children: [
                 TextSpan(
                   text: t.DidntRecieveCode,
-                  style: theme.textTheme.subtitle2,
+                  style: TextStyle(
+                  color: Colors.grey,
+                  fontFamily: "Nunito",
+                  ),
                 ),
                 TextSpan(
                   text: t.RESEND,
@@ -102,6 +117,7 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
                     },
                   style: TextStyle(
                     color: Color(0xFF91D3B3),
+                    fontFamily: "Nunito",
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                     decoration: TextDecoration.underline,

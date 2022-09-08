@@ -15,6 +15,7 @@ class ConsultationDatePickerView
     return Scaffold(
       appBar: AppBar(
         title: Text('Chose Timeslot'.tr),
+        backgroundColor: Color.fromRGBO(163, 144, 201, 1),
         centerTitle: true,
       ),
       body: Container(

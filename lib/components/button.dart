@@ -43,11 +43,18 @@ class AppButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed:
             onTap == null ? null : () => isLoading! ? null : onTap?.call(),
-        style: ElevatedButton.styleFrom(
-          elevation: 5,
-          primary: backgroundColor ?? theme.inversePrimaryColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius),
+        style: ButtonStyle(
+          // foregroundColor:
+          // MaterialStateProperty.all<Color>(Colors.transparent),
+          backgroundColor:
+          MaterialStateProperty.all<Color> (Color.fromRGBO(255, 255, 255, 0),),
+          shadowColor:
+          MaterialStateProperty.all(Colors.transparent),
+          shape:
+          MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
           ),
         ),
         child: Row(

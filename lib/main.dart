@@ -93,7 +93,8 @@ class _AppState extends State<App> {
     return Obx(
       () => GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: isUserLogin ? AppPages.DASHBOARD : AppPages.LOGIN,
+        // initialRoute: isUserLogin ? AppPages.DASHBOARD : AppPages.LOGIN,
+        initialRoute: AppPages.INTRO,
         getPages: AppPages.routes,
         title: t.AppName,
         builder: (context, myWidget) {

@@ -49,7 +49,7 @@ class _CustomNotificationWidgetState extends State<CustomNotificationWidget> {
                     widget.title,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 3,
-                    style: GoogleFonts.acme(
+                    style: GoogleFonts.nunito(
                       textStyle: theme.textTheme.subtitle1!
                           .copyWith(color: Colors.white),
                     ),
@@ -62,7 +62,7 @@ class _CustomNotificationWidgetState extends State<CustomNotificationWidget> {
               child: Text(
                 widget.body,
                 overflow: TextOverflow.ellipsis,
-                style: GoogleFonts.basic(
+                style: GoogleFonts.nunito(
                   textStyle:
                       theme.textTheme.subtitle1!.copyWith(color: Colors.white),
                 ),

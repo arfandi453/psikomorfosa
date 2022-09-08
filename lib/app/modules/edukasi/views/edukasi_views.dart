@@ -125,6 +125,13 @@ class EdukasiView extends StatelessWidget {
     deviceWidth = MediaQuery.of(context).size.width;
     deviceHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          foregroundColor: Color.fromRGBO(163, 144, 201, 1),
+          title: Text('Edukasi'.tr,style: TextStyle(fontFamily: "Nunito",fontWeight: FontWeight.bold),),
+          centerTitle: true,
+
+        ),
         key: _scaffoldKey,
         body: SafeArea(
             child: Padding(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -18,9 +19,9 @@ class NotificationScreen extends StatelessWidget {
         ListTile(
           title: Text(
             t.Notifications,
-            style: GoogleFonts.basic(textStyle: theme.textTheme.headline5),
+            style: GoogleFonts.nunito(textStyle: theme.textTheme.headline5,fontWeight:FontWeight.bold,color: Colors.white),
           ),
-          trailing: Icon(Icons.notifications),
+          trailing: Icon(Icons.notifications,color: Colors.white,),
         ),
         Expanded(
           child: Obx(

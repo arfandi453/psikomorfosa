@@ -13,6 +13,8 @@ class AboutPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
+        foregroundColor: Color.fromRGBO(163, 144, 201, 1),
         centerTitle: true,
         title: Text(t.About),
       ),
@@ -27,11 +29,11 @@ class AboutPage extends StatelessWidget {
           SizedBox(height: 10),
           Text(
             t.AppName,
-            style: GoogleFonts.cairo(textStyle: theme.textTheme.headline5),
+            style: GoogleFonts.nunito(textStyle: theme.textTheme.headline5,fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 16),
           ListTile(
-            title: Text(t.About),
+            title: Text(t.About,style: TextStyle(fontFamily: "Nunito",fontWeight: FontWeight.bold),),
             trailing: Icon(Icons.chevron_right),
             onTap: () {
               showAboutDialog(
